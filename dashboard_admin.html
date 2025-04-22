@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=\, initial-scale=1.0">
     <title>Admin Dashboard</title>
+    <link rel="stylesheet" href="style2.css">
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
@@ -12,5 +13,35 @@
         <div id="bottomhead">An innovation to: Faculty Work Hours Tracker and Visualizer</div>
         <br><br>
     </div>
+    <main>
+        <!-- View Faculty Status -->
+        <section>
+            <h2>Faculty Hour Status</h2>
+            <select id="facultySelector"></select>
+            <div id="facultyStatus"></div>
+        </section>
+
+        <!-- Settings -->
+        <section>
+            <h2>Settings</h2>
+            <label>Set Hour Requirement:
+                <input type="number" id="hourRequirement" />
+            </label><br><br>
+            <label>Add Holiday:
+                <input type="date" id="holidayDate" />
+                <button onclick="addHoliday()">Add</button>
+            </label>
+            <ul id="holidayList"></ul>
+        </section>
+
+        <!-- Export -->
+        <section>
+            <h2>Export Reports</h2>
+            <button onclick="exportToCSV()">Export CSV</button>
+        </section>
+    </main>
+
+    <script src="admin_dashboard.js"></script>
+
 </body>
 </html>
