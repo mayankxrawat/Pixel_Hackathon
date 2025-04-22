@@ -1,0 +1,41 @@
+body {
+    font-family: Arial, sans-serif;
+    background: #f0f4f8;
+}
+
+main {
+    padding: 30px;
+}
+
+section {
+    background: white;
+    padding: 20px;
+    margin-bottom: 30px;
+    border-radius: 8px;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+}
+
+h2 {
+    color: #845ec2;
+}
+
+label, select, input, button {
+    font-size: 15px;
+    background-color: aliceblue;
+}
+
+#facultySelector {
+    background-color: aliceblue ;
+    border-radius:15px;
+    cursor: pointer;
+    padding: 10px;
+    width: 250px;
+    margin-bottom: 15px;
+}
+
+#csvbtn {
+    border: 1px solid black;  
+    padding: 10px 20px;
+    border-radius: 10px;
+    cursor: pointer;
+}
