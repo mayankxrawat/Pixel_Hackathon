@@ -1,0 +1,50 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f0f4f8;
+}
+
+main {
+    padding: 30px;
+}
+
+
+section {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: white;
+    padding: 30px;
+    margin-bottom: 30px;
+    border-radius: 8px;
+}
+
+h2 {
+    color:#845ec2;
+    margin-bottom: 15px;
+}
+
+ul {
+    list-style-type: none;
+}
+
+li {
+    padding: 10px;
+}
+
+#calendar {
+    display: grid;
+    grid-template-columns: repeat(7, 45px);
+    gap: 8px;
+}
+
+.calendar-day {
+    background-color: #b0a8b9;
+    padding: 10px;
+    text-align: center;
+    border-radius: 6px;
+}
+
+.calendar-day:hover {
+    background-color: #d6d8db;
+    cursor: pointer;
+}
