@@ -1,6 +1,6 @@
 const facultyData = {
-    'John Doe': { hours: 32 },
-    'Jane Smith': { hours: 28 }
+    'MAYANK': { hours: 31 },
+    'JAY': { hours: 29 }
 };
 
 const selector = document.getElementById('facultySelector');
