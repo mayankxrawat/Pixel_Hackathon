@@ -1,0 +1,46 @@
+{% extends 'base.html' %}
+
+{% block title %}Faculty Dashboard{% endblock %}
+
+{% block content %}
+<div class="dashboard">
+    <h2>Welcome, {{ faculty_name }}!</h2>
+
+    <div class="stats">
+        <p><strong>Total Hours This Week:</strong> {{ total_hours }} hrs</p>
+        <p><strong>Required Hours:</strong> {{ required_hours }} hrs</p>
+        <p><strong>Status:</strong> 
+            {% if total_hours >= required_hours %}
+                On Track
+            {% else %}
+                Below Target
+            {% endif %}
+        </p>
+    </div>
+
+    <div class="actions">
+        {% if not is_punched_in %}
+            <form method="POST" action="{{ url_for('faculty.punch_in') }}">
+                <button type="submit" class="button punch-in">Punch In</button>
+            </form>
+        {% else %}
+            <form method="POST" action="{{ url_for('faculty.punch_out') }}">
+                <button type="submit" class="button punch-out">Punch Out</button>
+            </form>
+        {% endif %}
+    </div>
+
+    <div class="chart-section">
+        <h3>Your Weekly Hours</h3>
+        <canvas id="facultyChart"></canvas>
+    </div>
+</div>
+{% endblock %}
+
+{% block scripts %}
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+<script src="{{ url_for('static', filename='js/chart.js') }}"></script>
+<script>
+    // You can pass data using JSON from backend if needed
+</script>
+{% endblock %}

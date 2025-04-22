@@ -1,0 +1,34 @@
+{% extends 'base.html' %}
+
+{% block title %}View Logs - Admin{% endblock %}
+
+{% block content %}
+<div class="logs-page">
+    <h2>Faculty Punch Logs</h2>
+
+    <table>
+        <thead>
+            <tr>
+                <th>Faculty Name</th>
+                <th>Date</th>
+                <th>Punch In</th>
+                <th>Punch Out</th>
+                <th>Total Hours</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for log in logs %}
+            <tr>
+                <td>{{ log.faculty_name }}</td>
+                <td>{{ log.date }}</td>
+                <td>{{ log.punch_in }}</td>
+                <td>{{ log.punch_out or '-' }}</td>
+                <td>{{ log.total_hours or '-' }}</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+
+    <a href="{{ url_for('admin.dashboard') }}" class="button">Back to Admin Dashboard</a>
+</div>
+{% endblock %}
