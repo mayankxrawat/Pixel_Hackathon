@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Faculty Dashboard</title>
+    <link rel="stylesheet" href="style1.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="header">
+        <div id="head"><b>Ftrack</b></div>
+        <div id="bottomhead">An innovation to: Faculty Work Hours Tracker and Visualizer</div>
+        <br><br>
+    </div>
+    <main>
+        <!-- Daily Punch Logs -->
+        <div id="punchlogssection">
+        <section>
+            <h2>Daily Punch Logs</h2>
+            <ul id="punchLogs"></ul>
+        <div class="punchdiv">
+            <button id="punchinbtn">Punch In</button>
+            <button id="punchoutbtn">Punch Out</button>
+        </div>
+        </section>
+        </div>   
+        <!-- Weekly Summary -->
+        <section>
+            <h2>Weekly Summary</h2>
+            <p>Total Completed: <span id="weeklyCompleted">0</span> hrs</p>
+            <p>Required: 35 hrs</p>
+            <p id="shortfallAlert"></p>
+        </section>
+
+        <!-- Monthly Calendar View -->
+        <section>
+            <h2>Monthly Calendar</h2>
+            <div id="calendar"></div>
+        </section>
+    </main>
+
+    <script src="dashboard.js"></script>
+</body>
+</html>
