@@ -1,1 +1,1 @@
-  # Faculty Workhour Tracker And Visualizer
+# Faculty Workhour Tracker And Visualizer
