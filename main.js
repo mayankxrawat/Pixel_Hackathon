@@ -22,3 +22,8 @@ signupTab.addEventListener("click", () => {
 // submitbutton.addEventListener("click", () => {
 //     window.location.href="home.html";
 // });
+
+function toggleMenu() {
+    const nav = document.getElementById("navMenu");
+    nav.style.display = nav.style.display === "none" ? "block" : "none";
+  }
