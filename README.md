@@ -1,8 +1,9 @@
 # Faculty workhour tracker and visualizer
- Team: BuildForGEHU’25
+ Team:PIXEL 
+ BuildForGEHU’25
 
 --Name	Role
-Mayank Rawat	Backend Dev
+Mayank Rawat	 backend
 Sarthak chaudhary	Frontend Developer
 Kanchna Rana	Backend and database management
 Jay Pandey documentation & backend
