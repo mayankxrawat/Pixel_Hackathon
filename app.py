@@ -5,16 +5,54 @@ from datetime import datetime, timedelta
 from models import db, Faculty, PunchLog, Holiday
 from utils import calculate_hours, get_adjusted_weekly_target
 from auth import token_required
+from flask import render_template, session, redirect, url_for
 
+app = Flask(__name__)
+CORS(app)
+
+@app.route('/api/login', methods=['POST'])
+def login():
+    data = request.get_json()
+    username = data.get('username')
+    password = data.get('password')
+
+    faculty = Faculty.query.filter_by(username=username, password=password).first()
+
+    if faculty:
+        session['user_id'] = faculty.id
+        return jsonify({'message': 'Login successful'}), 200
+    else:
+        return jsonify({'error': 'Invalid credentials'}), 401
+# Serve login page
+@app.route('/')
+def home():
+    return redirect(url_for('login_page'))
+
+@app.route('/login')
+def login_page():
+    return render_template('login.html')
+
+# Serve admin dashboard
+@app.route('/admin')
+def admin_dashboard_page():
+    return render_template('dashboard_admin.html')
+
+@app.route('/admin-login')
+def admin_login_page():
+    return render_template('admin_login.html')
+# Serve faculty dashboard
+# This line has been moved above the route definitions
+def faculty_dashboard_page():
+    return render_template('dashboard_faculty.html')
 app = Flask(__name__)
 CORS(app)
 
 # Config
 app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///faculty_tracker.db'
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
-app.config['SECRET_KEY'] = 'your-secret-key'
-
-db.init_app(app)
+app.config['SECRET_KEY'] = '123'
+db = SQLAlchemy(app)
+db.init_app
 
 # ---------------------------------------
 # Routes
